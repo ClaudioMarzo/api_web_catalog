@@ -1,0 +1,18 @@
+version: '3.9'
+
+services:
+  catalog-database:
+    image: postgres:15.0-alpine
+    container_name: catalog-database
+    restart: always
+    environment:
+      - POSTGRES_DB=catalog
+      - POSTGRES_USER=catalog
+      - POSTGRES_PASSWORD=8486
+    volumes:
+      - catalog-database:/var/lib/postgresql/data
+    ports:
+      - "23100:5432"
+
+volumes:
+  catalog-database:
