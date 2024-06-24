@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
-using Catalog.Core.Entities;
+using Catalog.Core.Entities.Customer;
+using Catalog.Core.Entities.Product;
 
 namespace Catalog.Infrastructure.Data
 {
@@ -9,13 +10,12 @@ namespace Catalog.Infrastructure.Data
         {
         }
 
-        public DbSet<Cliente> Clientes { get; set; }
-        public DbSet<Produto> Produtos { get; set; }
+        public DbSet<Customer> Customer { get; set; }
+        public DbSet<Product> Product { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            // Configurações adicionais podem ser adicionadas aqui
         }
     }
 }
